@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.14'
+}
+
+group 'com.colesattac'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.tika:tika-core:2.9.1'
+    implementation ('org.apache.tika:tika-parsers-standard-package:2.9.1') {
+        exclude group: 'xml-apis', module: 'xml-apis'
+    }
+    implementation "org.openjfx:javafx-controls:21.0.5"
+    implementation "org.openjfx:javafx-fxml:21.0.5"
+    implementation "org.openjfx:javafx-swing:21.0.5"
+    implementation 'org.apache.logging.log4j:log4j-core:2.22.1'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.22.1'
+}
+
+javafx {
+    version = "21.0.5"
+    modules = [ 'javafx.controls', 'javafx.fxml','javafx.swing']
+}
+
+application {
+    mainClass = 'com.colesattac.fileanalyzer.MainApp'
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
