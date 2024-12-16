@@ -3,6 +3,8 @@ module com.colesattac.fileanalyzer.fileanalyzer {
     requires javafx.fxml;
     requires java.desktop;
     requires javafx.swing;
+    requires javafx.media;
+    requires javafx.web;
 
     requires org.apache.tika.core;
 
@@ -10,6 +12,7 @@ module com.colesattac.fileanalyzer.fileanalyzer {
     requires org.apache.tika.parser.font;
     requires org.apache.tika.parser.apple;
     requires org.apache.tika.parser.microsoft;
+
 
 
     opens com.colesattac.fileanalyzer to javafx.fxml;
